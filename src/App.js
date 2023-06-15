@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./Components/Navbar";
+import AboutMe from "./Components/AboutMe";
+import Section from "./Components/Section";
+import sectionData from "./sectionData";
+import Footer from "./Components/Footer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+
+    return (
+        <div>
+            <Navbar />
+            <AboutMe />
+             {
+                 sectionData.map((data)=>(
+                       <Section 
+                        title={data.title}
+                        description={data.description}
+                       />
+                 ))
+             }
+
+            <Footer />
+
+        </div>
+    );
 }
-
 export default App;
+
+
+// if else = > ternary operator
+
+// loops => map, filter, reduce (higher order functions)
